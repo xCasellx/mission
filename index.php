@@ -13,7 +13,7 @@
         $res = $db->query("SELECT * FROM `user` WHERE `email`= '$email' AND `password`='$password' ");
         $user = $res->fetch_assoc();
         if (count($user) > 0){
-            $_SESSION["auto_user"] = $email;
+            $_SESSION["auto_user"] = $user["id"];
             $db->close();
             header("Location:cabinetPage.php");
             exit;
@@ -25,8 +25,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Sign in</title>
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+
     </head>
  <body>
      <div align="center" class="mt-5">
@@ -44,5 +44,4 @@
          </div>
      </div>
  </body>
-
 </html>
