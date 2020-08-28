@@ -16,33 +16,33 @@
         $password = $_POST["password"];
         $confirm_password = $_POST["confirm_password"];
         if($fname == ''){
-            $error[] = "First name empty";
+            $error = "First name empty";
         }
         elseif($sname == ''){
-            $error[] =  "Second name empty";
+            $error =  "Second name empty";
         }
         elseif($email == ''){
-            $error[] ="Email empty";
+            $error ="Email empty";
         }
         elseif($password == ''){
-            $error[] ="Password empty";
+            $error ="Password empty";
         }
         elseif($residence == ''){
-            $error[] ="Place of residence empty";
+            $error ="Place of residence empty";
         }
         elseif($number == ''){
-            $error[] ="Number empty";
+            $error ="Number empty";
 
         }elseif($date == ''){
-            $error[] ="Date empty";
+            $error ="Date empty";
         }
         elseif($password == $confirm_password){
-            $error[] ="Password mismatch";
+            $error ="Password mismatch";
         }
         $res=$db->query("SELECT `email` FROM `user` WHERE `email`= '$email' ");
         $user=$res->fetch_assoc();
         if(count($user)){;
-            $error[] = "this email already exists";
+            $error = "this email already exists";
         }
         if(empty($error)){
             $password = md5($_POST["password"]);
@@ -64,7 +64,7 @@
         <div align="center" class="mt-5">
             <h1 >Register</h1>
             <div  class="container mt-5" align="center">
-                <?php if(!empty($error)) echo "<div  class='w-25 alert alert-danger'  role='alert'> $error[0] </div>"; ?>
+                <?php if(!empty($error)) echo "<div  class='w-25 alert alert-danger'  role='alert'> $error </div>"; ?>
                 <form action="" class="mt-5 w-25 container" method="post">
                     <p><input class="form-control" type="text" name="first_name"  placeholder="First name"></p>
                     <p><input class="form-control" type="text" name="second_name" placeholder="Second name"></p>

@@ -21,9 +21,11 @@
     <body class="bg-secondary">
         <?require("block/nav_panel.php");?>
         <main role="main" class="bg-light container pt-5">
-            <div class="clearfix container pb-5">
-                <img class=" ml-5 float-left img-fluid img" src="/image/nan.png" alt="">
-                <div class="text-center ">
+            <div class="row container pb-5">
+                <div class="container col">
+                    <img class=" ml-5 img-fluid img" src="/image/nan.png" alt="">
+                </div>
+                <div class=" col ">
                     <label> <strong>Name: </strong><?php echo $user["first_name"];?> </label><br>
                     <label><strong>Surname: </strong><?php echo $user["second_name"];?> </label><br>
                     <label><strong>Number: </strong><?php echo $user["number"];?> </label><br>
