@@ -12,6 +12,9 @@
             }elseif(empty($error)){
                 $datetime = date("Y-m-d H:i:s");
                 $db->query("INSERT INTO `comments` (`user_id`, `date`, `text`) VALUES ('$id', '$datetime', '$text')");
+                $user=$db->query("SELECT * FROM `user` WHERE `id`= '$id'");
+                $user_data=$user->fetch_assoc();
+                mail($user_data["email"], "You comment", ('Date:'.$datetime." ".$text), 'From: testalph55@gmail.com');
                 header("Location: /Comments.php");
 
             }
