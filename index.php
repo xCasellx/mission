@@ -28,18 +28,24 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
     </head>
- <body>
-     <div align="center" class="mt-5">
-         <h1>Sign in</h1>
-         <div class = "container mt-5 ">
-             <?php if(!empty($error_msg)) echo "<div  class='w-25 alert alert-danger'  role='alert'> $error_msg </div>"; ?>
-             <form class = "w-25 " action="" method="post">
-                 <label for="email" class="sr-only">email</label>
-                 <p><input class="form-control" type="email" name="email" placeholder="Email address"></p>
-                 <label for="password" class="sr-only">Password</label>
-                 <p><input class="form-control" type="password" name="password" placeholder="Password"></p>
-                 <p><button class="btn btn-lg btn-dark btn-block" type="submit" name="submit"><strong>Sign in</strong></button></p>
-                 <a href="RegPage.php"><strong>Register</strong></a>
+ <body class="bg-dark">
+     <div  class="text-center container bg-light" style="width: 30%">
+         <h1 class=" pt-5 pb-3"><strong>Sign in</strong></h1>
+         <div class = "container col">
+             <?php if(!empty($error_msg)) echo "<div  class=' col alert alert-danger'  role='alert'> $error_msg </div>"; ?>
+             <form  action="" method="post">
+                 <div class=" row">
+                     <input class="mt-1 form-control" type="email" name="email" placeholder="Email address">
+                 </div>
+                 <div class=" row">
+                     <input class="mt-1 form-control" type="password" name="password" placeholder="Password">
+                 </div>
+                 <div class=" row">
+                     <button class="mt-2 col-8 offset-2 btn btn-lg btn-success btn-block" type="submit" name="submit"><strong>Sign in</strong></button>
+                 </div>
+                 <div class=" row">
+                     <a class="clo-4 offset-5 mt-1 pb-5" href="RegPage.php"><strong>Register</strong></a>
+                 </div>
              </form>
          </div>
      </div>

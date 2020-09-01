@@ -60,23 +60,47 @@
     <title>Register</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
-    <body>
-        <div align="center" class="mt-5">
-            <h1 >Register</h1>
-            <div  class="container mt-5" align="center">
-                <?php if(!empty($error)) echo "<div  class='w-25 alert alert-danger'  role='alert'> $error </div>"; ?>
-                <form action="" class="mt-5 w-25 container" method="post">
-                    <p><input class="form-control" type="text" name="first_name"  placeholder="First name"></p>
-                    <p><input class="form-control" type="text" name="second_name" placeholder="Second name"></p>
-                    <p><input class="form-control" type="text" name="number" placeholder="Number"></p>
-                    <p><input class="form-control" type="text" name="residence" placeholder="Place of residence"></p>
-                    <p><input class="form-control" type="email" name="email" placeholder="Email address"></p>
-                    <p><label class="form-control border-0 pb-0">Date of Birth</label>
-                    <input class="form-control " type="date" name="date" placeholder="Email address"></p>
-                    <p><input class="form-control" type="password" name="password" placeholder="Password"></p>
-                    <p><input class="form-control" type="password" name="confirm-password" placeholder="Confirm password"></p>
-                    <p><button  class="btn btn-lg btn-dark btn-block" type="submit" name="submit"><strong>Register</strong></button></p>
-                    <a href="index.php"><strong>Sign in</strong></a>
+    <body class="bg-dark">
+        <div  class="text-center container bg-light" style="width: 30%;">
+            <h1 class="pt-5 pb-5"><strong>Register</strong></h1>
+            <div class="container ">
+                <form action=""  method="post">
+                    <?php if(!empty($error)) echo "<div  class='row mt-3 alert alert-danger'  role='alert'> $error </div>"; ?>
+                    <div class="row">
+                        <div class="col">
+                            <input class="border border-dark form-control" type="text" name="first_name"  placeholder="First name">
+                        </div>
+                        <div class="col">
+                            <input class="border border-dark form-control" type="text" name="second_name" placeholder="Second name">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <input class="border border-dark form-control" type="text" name="number" placeholder="Number">
+                        </div>
+                        <div class="col">
+                            <input class="border border-dark form-control" type="text" name="residence" placeholder="Place of residence">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <input class="border border-dark form-control" type="email" name="email" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label class="form-control  border-0 pb-0">Date of Birth</label>
+                        </div>
+                        <div class="col">
+                            <input class="border border-dark form-control " type="date" name="date" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <button  class="offset-2 col-8  btn btn-lg btn-success btn-block" type="submit" name="submit"><strong>Register</strong></button>
+                    </div>
+                    <div class="row">
+                        <a class="col-md-4 mb-5 offset-4 text-center align-items-center" href="index.php"><strong>Sign in</strong></a>
+                    </div>
                 </form>
             </div>
         </div>
