@@ -26,6 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="pb-5" id="comment_list"></div>
+    <div class="pb-5" id="comment_list">
+    </div>
     <script src="js/comment.js"></script>
 <? require("block/footer.php");?>

@@ -15,7 +15,8 @@ $(document).ready(function(){
             $.post('/module/comment_add.php',
                 {   comment: text,
                     comment_id: comment_id
-                });
+                },document.location.reload(true));
+
         })
     });
     return false;

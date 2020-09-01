@@ -4,6 +4,7 @@
             <meta charset="UTF-8">
             <title>CABINET</title>
             <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+            <link rel="stylesheet" href="css/style.css"  type="text/css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
             <script src="js/bootstrap.js"></script>
             <link rel="stylesheet" href="css/style.css"  type="text/css">

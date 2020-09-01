@@ -7,10 +7,10 @@
         $user=$db->query("SELECT * FROM `user` WHERE `id`= '$user_id'");
         $user_data=$user->fetch_assoc();
         $comment=$com["id"];
-        echo "<div class='border-dark border container mb-2'>".
+        echo "<div class='comment  border-top border-success container mb-2'>".
             "<p><strong>Name:</strong>".$user_data["first_name"]."<br>".
-            "<strong>Data: </strong>".  $com["date"]."<br>".$com["text"]."<br>".
-            "<a href='#' class='comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a></p>";
+            "<small>".  $com["date"]."</small><br>".$com["text"]."<br>".
+            "<a href='#' class='text-success tag comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a></p>";
         PrintComment($comment,$user_data["first_name"]);
         echo '</div>';
 
@@ -23,13 +23,12 @@
         $r=$db->query("SELECT * FROM `comments` WHERE `parent_id` = '$comment_id' ");
         while(($c=$r->fetch_assoc())){
             $comment=$c["id"];
-            echo "<div  class='ml-3 border-dark border container mb-2'>".
+            echo "<div  class='ml-3 border-top border-success mb-0 pb-0 comment container mb-2'>".
                 "<p><strong>Name:</strong>$user_name<br>".
-                "<strong>Data: </strong>".  $c["date"]."<br>".$c["text"]."<br>".
-                "<a href='#' class='comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a>".
+                "<small>Data: ".  $c["date"]."</small><br>".$c["text"]."<br>".
+                "<a href='#' class='text-success comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a>".
                 "</p>";
             PrintComment($comment,$user_name);
             echo '</div>';
-
         }
     }
