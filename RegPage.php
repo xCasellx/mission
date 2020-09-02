@@ -36,7 +36,7 @@
         }elseif($date == ''){
             $error ="Date empty";
         }
-        elseif($password == $confirm_password){
+        elseif($password != $confirm_password){
             $error ="Password mismatch";
         }
         $res=$db->query("SELECT `email` FROM `user` WHERE `email`= '$email' ");
@@ -45,7 +45,7 @@
             $error = "this email already exists";
         }
         if(empty($error)){
-            $password = md5($_POST["password"]);
+            $password = md5($password);
             $db->query("INSERT INTO `user` (`first_name`,`second_name`,`email`,`password`,`date`,`number`,`town`) VALUE 
                                                  ('$fname','$sname','$email','$password','$date','$number','$residence')");
             $db->close();
@@ -93,6 +93,14 @@
                         </div>
                         <div class="col">
                             <input class="border border-dark form-control " type="date" name="date" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <input class="border border-dark form-control" type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="col">
+                            <input class="border border-dark form-control" type="password" name="confirm_password" placeholder="Confirm password">
                         </div>
                     </div>
                     <div class="row mt-2">
