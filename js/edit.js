@@ -22,25 +22,27 @@ $(document).ready(function () {
             case "number":
                 $("#input-number").css("display", "block");
                 break;
+            case "password":
+                $("#div-password").css("display", "block");
+                break;
             default :
                 $("#input-modal").css("display", "block");
-                break;
+
         }
     });
     $(document).on("click","#save_button",function () {
-        let edit_text= "";
-        switch (edit_component) {
+        let edit_text;
+        switch (edit_component){
             case "date":
-                edit_text=  $("#input-date").val();
+                edit_text= $("#input-date").val();
                 break;
             case "number":
-                edit_text=  $("#input-number").val();
+                edit_text= $("#input-number").val();
                 break;
             default :
-                edit_text=  $("#input-modal").val();
+                edit_text= $("#input-modal").val();
                 break;
         }
-
         $.post("../module/edit-data.php",{
             component: edit_component,
             edit_text :edit_text
@@ -51,15 +53,10 @@ $(document).ready(function () {
         });
         edit_component="";
     });
-    $(document).on("click",".modal_reset",function() {
+
+    $('#myModal').on('hide.bs.modal', function() {
         $(".input-edit").val("");
         $(".input-edit").css("display", "none");
-        return false;
-    });
-
-    $('#modal_no_reset').click(function( event ) {
-        alert(event.namespaces())
-        event.stopPropagation();
     });
     return false;
 });

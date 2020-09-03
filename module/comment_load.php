@@ -7,25 +7,44 @@
         $user=$db->query("SELECT * FROM `user` WHERE `id`= '$user_id'");
         $user_data=$user->fetch_assoc();
         $comment=$com["id"];
-        echo "<div class='comment  border-top border-success container mb-2'>".
-            "<p><strong>Name:</strong>".$user_data["first_name"]."<br>".
-            "<small>".  $com["date"]."</small><br>".$com["text"]."<br>".
-            "<a href='#' class='text-success tag comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a></p>";
-        PrintComment($comment,$user_data["first_name"]);
+        echo "<div class='comment'>".
+        comment($user_data["first_name"],$user_data["second_name"],$com["text"],$com["date"],$comment);
+        PrintComment($comment);
         echo '</div>';
     }
 
-    function PrintComment($comment_id,$user_name) {
+    function PrintComment($comment_id) {
         require("../include/bd.php");
-        $r=$db->query("SELECT * FROM `comments` WHERE `parent_id` = '$comment_id' ");
-        while(($c=$r->fetch_assoc())){
-            $comment=$c["id"];
-            echo "<div  class='ml-3 border-top border-success mb-0 pb-0 comment container mb-2'>".
-                "<p><strong>Name:</strong>$user_name<br>".
-                "<small>Data: ".  $c["date"]."</small><br>".$c["text"]."<br>".
-                "<a href='#' class='text-success comment_id'id='$comment' data-toggle='modal' data-target='#myModal'> comment</a>".
-                "</p>";
-            PrintComment($comment,$user_name);
+        $res=$db->query("SELECT * FROM `comments` WHERE `parent_id` = '$comment_id' ");
+        while(($com=$res->fetch_assoc())){
+            $user_id=$com["user_id"];
+            $user=$db->query("SELECT * FROM `user` WHERE `id`= '$user_id'");
+            $user_data=$user->fetch_assoc();
+            $comment=$com["id"];
+            echo "<div class='ml-3 comment'>";
+            comment($user_data["first_name"],$user_data["second_name"],$com["text"],$com["date"],$comment);
+            PrintComment($comment);
             echo '</div>';
         }
+    }
+
+    function comment($first_name,$second_name,$text,$date,$id_comment){
+        echo "
+            <div class='card '>
+                <div class='card-header bg-dark text-light row' >
+                    <div class='col-1 p-0' style='max-width: 32px'>
+                        <img class='rounded  img-fluid img' src='/image/nan.png' style='width: 32px;height: 32px;' alt=''>
+                    </div>
+                    <h6 class='col '>$first_name  $second_name</h6>
+                    <small class='col text-right'>$date</small>
+                </div>
+                <div class='card-body'>
+                   $text
+                </div>
+                <div class='card-footer bg-dark text-right'>
+                    <a href='#' class='text-success comment_id'id='$id_comment' data-toggle='modal' data-target='#myModal'><strong>comment</strong></a>
+                </div>
+            </div>
+        
+        ";
     }

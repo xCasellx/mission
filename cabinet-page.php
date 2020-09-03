@@ -25,15 +25,16 @@
                 <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-town">edit</a><br>
                 <label><strong>Email address: </strong><?php echo $user["email"];?> </label>
                 <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-email">edit</a><br>
+                <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-password">edit password</a><br class="edit-data">
                 <div class="mt-3 bg-dark rounded p-1" ></div>
                     <a href="#" id="open-edit-data" class="float-right text-success mr-2 " style="text-decoration: none"><strong>Edit</strong></a>
                     <a href="#" id="cancel-edit-data" class="float-right text-success mr-2 " style="text-decoration: none; display: none;"><strong>Cancel</strong></a>
             </div>
         </div>
     </div>
-    <div class="modal modal_reset" id="myModal">
+    <div class="modal fade" id="myModal">
         <div class=" modal-dialog" >
-            <div class="modal-content" id="modal_no_reset">
+            <div class="modal-content" >
                 <div class=" text-center modal-header">
                     <h4 class=" modal-title">Edit</h4>
                 </div>
@@ -41,10 +42,15 @@
                     <input type="date" class="form-control input-edit" id="input-date" style="display: none">
                     <input type="number" class="form-control input-edit" id="input-number" style="display: none">
                     <input type="text" class="form-control input-edit" id="input-modal" style="display: none" >
+                    <div class="input-edit" id="div-password" style="display: none">
+                        <input type="password" class="form-control" id="input-password">
+                        <input type="password" class="form-control" id="input-new-password">
+                        <input type="password" class="form-control" id="input-confirm-password">
+                    </div>
                 </div>
                 <div class="modal-footer">
-                        <button type="button"  id="save_button" class="btn btn-success" data-dismiss="modal"><strong>Save</strong></button>
-                        <button type="button"  class="modal_reset btn btn-danger" data-dismiss="modal"><strong>Close</strong></button>
+                        <button type="button"  id="save_button" class="btn btn-success" ><strong>Save</strong></button>
+                        <button type="button"  class="btn btn-danger" data-dismiss="modal"><strong>Close</strong></button>
                 </div>
             </div>
         </div>
