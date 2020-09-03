@@ -20,8 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f768d33-effb-4e2d-a143-e1e27da7d564" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cabinet-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/edit-data.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RegPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/RegPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/сomments-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RegPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/block/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cabinetPage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SignOut.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/sign-out.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/comment_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/module/comment_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/comment_load.php" beforeDir="false" afterPath="$PROJECT_DIR$/module/comment_load.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +87,7 @@
       <updated>1598443976986</updated>
       <workItem from="1598443978562" duration="25135000" />
       <workItem from="1598552591629" duration="14309000" />
-      <workItem from="1598900447863" duration="25323000" />
+      <workItem from="1598900447863" duration="54839000" />
     </task>
     <servers />
   </component>
@@ -103,32 +115,25 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="533" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1598461737954" />
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1599122768977">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599122768977" />
     <state x="576" y="155" key="NewPhpClassDialog" timestamp="1598949326164">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="576" y="155" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1598949326164" />
-    <state x="604" y="355" key="NewPhpFileDialog" timestamp="1598961548438">
+    <state x="604" y="355" key="NewPhpFileDialog" timestamp="1599052739394">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1598961548438" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1598947808031">
+    <state x="604" y="355" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1599052739394" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1599122699914">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1598947808031" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1599122699914" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1598555176973">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1598555176973" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/module/comment_load.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

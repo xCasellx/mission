@@ -2,22 +2,23 @@
     session_start();
     require("include/bd.php"); ?>
 <?php
-    if(isset($_SESSION["auto_user"])){
-        header("Location:cabinetPage.php");
+    if(isset($_SESSION["auto_user"])) {
+        header("Location:cabinet-page.php");
         exit();
     }
     $error_msg = "";
-    if(isset($_POST["submit"])){
+    if(isset($_POST["submit"])) {
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_STRING);
         $password = md5($_POST["password"]);
         $res = $db->query("SELECT * FROM `user` WHERE `email`= '$email' AND `password`='$password' ");
         $user = $res->fetch_assoc();
-        if (count($user) > 0){
+        if (count($user) > 0) {
             $_SESSION["auto_user"] = $user["id"];
             $db->close();
-            header("Location:cabinetPage.php");
+            header("Location:cabinet-page.php");
             exit;
-        }else   $error_msg = "Incorrect email or passwords";
+        }
+        else   $error_msg = "Incorrect email or passwords";
     }
 ?>
 <!DOCTYPE html>
@@ -44,7 +45,7 @@
                      <button class="mt-2 col-8 offset-2 btn btn-lg btn-success btn-block" type="submit" name="submit"><strong>Sign in</strong></button>
                  </div>
                  <div class=" row">
-                     <a class="clo-4 offset-5 mt-1 pb-5" href="RegPage.php"><strong>Register</strong></a>
+                     <a class="clo-4 offset-5 mt-1 pb-5" href="reg-page.php"><strong>Register</strong></a>
                  </div>
              </form>
          </div>

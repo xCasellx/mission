@@ -1,12 +1,12 @@
 <?php require("include/bd.php"); ?>
 <?php
     session_start();
-    if(isset($_SESSION["auto_user"])){
-        header("Location:cabinetPage.php");
+    if(isset($_SESSION["auto_user"])) {
+        header("Location:cabinet-page.php");
         exit();
     }
     $error = "";
-    if(isset($_POST["submit"])){
+    if(isset($_POST["submit"])) {
         $fname = filter_var(trim($_POST["first_name"]),FILTER_SANITIZE_STRING);
         $sname = filter_var(trim($_POST["second_name"]),FILTER_SANITIZE_STRING);
         $email = filter_var(trim($_POST["email"]),FILTER_SANITIZE_STRING);
@@ -15,36 +15,37 @@
         $date = filter_var(trim($_POST["date"]),FILTER_SANITIZE_STRING);
         $password = $_POST["password"];
         $confirm_password = $_POST["confirm_password"];
-        if($fname == ''){
+        if($fname == '') {
             $error = "First name empty";
         }
-        elseif($sname == ''){
+        elseif($sname == '') {
             $error =  "Second name empty";
         }
-        elseif($email == ''){
+        elseif($email == '') {
             $error ="Email empty";
         }
-        elseif($password == ''){
+        elseif($password == '') {
             $error ="Password empty";
         }
-        elseif($residence == ''){
+        elseif($residence == '') {
             $error ="Place of residence empty";
         }
-        elseif($number == ''){
+        elseif($number == '') {
             $error ="Number empty";
 
-        }elseif($date == ''){
+        }
+        elseif($date == '') {
             $error ="Date empty";
         }
-        elseif($password != $confirm_password){
+        elseif($password != $confirm_password) {
             $error ="Password mismatch";
         }
         $res=$db->query("SELECT `email` FROM `user` WHERE `email`= '$email' ");
         $user=$res->fetch_assoc();
-        if(count($user)){;
+        if(count($user)) {
             $error = "this email already exists";
         }
-        if(empty($error)){
+        if(empty($error)) {
             $password = md5($password);
             $db->query("INSERT INTO `user` (`first_name`,`second_name`,`email`,`password`,`date`,`number`,`town`) VALUE 
                                                  ('$fname','$sname','$email','$password','$date','$number','$residence')");
@@ -76,7 +77,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input class="border border-dark form-control" type="text" name="number" placeholder="Number">
+                            <input class="border border-dark form-control" type="text" name="number" placeholder="Phone">
                         </div>
                         <div class="col">
                             <input class="border border-dark form-control" type="text" name="residence" placeholder="Place of residence">

@@ -1,5 +1,5 @@
-<? require("include/check_auto.php"); ?>
-<? require("block/header.php");?>
+<?php require("include/check_auto.php");
+      require("block/header.php");?>
     <div>
         <form action="" method="post">
             <textarea class=" row  ml-1 form-control border-dark border" id="comment" name="text" rows="10" cols="70"></textarea>
@@ -29,4 +29,4 @@
     <div class="pb-5" id="comment_list">
     </div>
     <script src="js/comment.js"></script>
-<? require("block/footer.php");?>
+<?php require("block/footer.php");?>
