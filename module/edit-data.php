@@ -14,7 +14,7 @@
         switch ($component) {
             case "email":
                 $text = filter_var(trim($text),FILTER_SANITIZE_STRING);
-                $res=$db->query("SELECT `email` FROM `user` WHERE `email`= '$email' ");
+                $res=$db->query("SELECT `email` FROM `user` WHERE `email`= '$text' ");
                 $user=$res->fetch_assoc();
                 if(count($user)) {
                     echo "Error: this email already exists";

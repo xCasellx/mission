@@ -47,6 +47,9 @@ $(document).ready(function () {
             case "date":
                 edit_text= $("#input-date").val();
                 break;
+            case "email":
+                edit_text= $("#input-email").val();
+                break;
             case "number":
                 edit_text= $("#input-number").val();
                 break;
