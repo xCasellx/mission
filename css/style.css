@@ -2,3 +2,7 @@
     display: none;
     text-decoration: none;
 }
+.input-edit{
+    max-width:300px;
+    margin-left: 50px;
+}

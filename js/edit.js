@@ -22,6 +22,9 @@ $(document).ready(function () {
             case "number":
                 $("#input-number").css("display", "block");
                 break;
+            case "email":
+                $("#input-email").css("display", "block");
+                break;
             case "password":
                 $("#div-password").css("display", "block");
                 break;
@@ -47,14 +50,27 @@ $(document).ready(function () {
             component: edit_component,
             edit_text :edit_text
         },function (data) {
-            if(data!="error") {
+            if(data.indexOf("Error:")!=-1) {
+                switch (edit_component) {
+                    case "date":
+                        edit_text= $("#input-date").addClass("alert-danger");
+                        break;
+                    case "number":
+                        edit_text= $("#input-number").addClass("alert-danger");
+                        break;
+                    default :
+                        edit_text= $("#input-modal").addClass("alert-danger");
+                        break;
+                }
+            }
+            else {
                 document.location.reload(true);
             }
+            return false;
         });
-        edit_component="";
     });
-
     $('#myModal').on('hide.bs.modal', function() {
+        edit_component="";
         $(".input-edit").val("");
         $(".input-edit").css("display", "none");
     });
