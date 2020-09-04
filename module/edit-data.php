@@ -22,7 +22,7 @@
                 }
                 break;
             case "password":
-                $res=$db->query("SELECT `email` FROM `user` WHERE `id`= '$id' ");
+                $res=$db->query("SELECT `password` FROM `user` WHERE `id`= '$id' ");
                 $user=$res->fetch_assoc();
                 if((md5($_POST["password"]) != $user["password"])) {
                     echo  "Error: Wrong password entered";
@@ -37,8 +37,8 @@
             default :
                 break;
         }
+        echo "3";
         $user=$db->query("UPDATE `user` SET `$component` = '$text' WHERE `id`= '$id'");
-        echo "Success: ".$component."-".$text;
     }
     else {
         echo "Error: empty post";

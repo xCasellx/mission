@@ -38,15 +38,16 @@
                 <div class=" text-center modal-header">
                     <h4 class=" modal-title">Edit</h4>
                 </div>
-                <div class="modal-body">
-                    <input type="date" class="form-control border-dark border input-edit" id="input-date" style="display: none">
-                    <input type="email" class="form-control border-dark border input-edit" id="input-email" style="display: none">
-                    <input type="number" class="form-control border-dark border input-edit" placeholder="Number" id="input-number" style="display: none">
-                    <input type="text" class="form-control border-dark border input-edit" id="input-modal" style="display: none" >
+                <div class=" modal-body" >
+                    <label class="text-danger" id="error-msg" ></label>
+                    <input type="date" class="form-control border-dark border input-textinput-edit" id="input-date" style="display: none">
+                    <input type="email" class="form-control border-dark border input-text input-edit" id="input-email" style="display: none">
+                    <input type="number" class="form-control border-dark border input-text input-edit" placeholder="Number" id="input-number" style="display: none">
+                    <input type="text" class="form-control border-dark border input-text input-edit" id="input-modal" style="display: none" >
                     <div class="input-edit " id="div-password" style="display: none;">
-                        <input type="password" class="mt-2 border-dark border form-control" placeholder="Password"  id="input-password">
-                        <input type="password" class="mt-2 border-dark border form-control" placeholder="New password"  id="input-new-password">
-                        <input type="password" class="mt-2 border-dark border form-control" placeholder="Confirm password" id="input-confirm-password">
+                        <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Password"  id="input-password">
+                        <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="New password"  id="input-new-password">
+                        <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Confirm password" id="input-confirm-password">
                     </div>
                 </div>
                 <div class="modal-footer">

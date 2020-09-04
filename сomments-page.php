@@ -1,7 +1,7 @@
 <?php require("include/check_auto.php");
       require("block/header.php");?>
-    <div>
-        <h1 class="text-center mb-3 text-dark">leave a comment</h1>
+    <div class=" mb-2">
+        <h1 class="text-center  text-dark">leave a comment</h1>
     </div>
     <div>
         <form action="" method="post">
