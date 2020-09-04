@@ -69,39 +69,39 @@
                     <?php if(!empty($error)) echo "<div  class='row mt-3 alert alert-danger'  role='alert'> $error </div>"; ?>
                     <div class="row">
                         <div class="col">
-                            <input class="border border-dark form-control" type="text" name="first_name"  placeholder="First name">
+                            <input required class="border border-dark form-control" type="text" name="first_name"  placeholder="First name">
                         </div>
                         <div class="col">
-                            <input class="border border-dark form-control" type="text" name="second_name" placeholder="Second name">
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col">
-                            <input class="border border-dark form-control" type="text" name="number" placeholder="Phone">
-                        </div>
-                        <div class="col">
-                            <input class="border border-dark form-control" type="text" name="residence" placeholder="Place of residence">
+                            <input required class="border border-dark form-control" type="text" name="second_name" placeholder="Second name">
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input class="border border-dark form-control" type="email" name="email" placeholder="Email address">
+                            <input required class="border border-dark form-control" type="text" name="number" maxlength="15" placeholder="Phone">
+                        </div>
+                        <div class="col">
+                            <input required  class="border border-dark form-control" type="text" name="residence" placeholder="Place of residence">
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <label class="form-control  border-0 pb-0">Date of Birth</label>
-                        </div>
-                        <div class="col">
-                            <input class="border border-dark form-control " type="date" name="date" placeholder="Email address">
+                            <input required class="border border-dark form-control" type="email" name="email" placeholder="Email address">
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input class="border border-dark form-control" type="password" name="password" placeholder="Password">
+                            <label  class="form-control  border-0 pb-0">Date of Birth</label>
                         </div>
                         <div class="col">
-                            <input class="border border-dark form-control" type="password" name="confirm_password" placeholder="Confirm password">
+                            <input required class="border border-dark form-control " type="date" name="date" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <input required class="border border-dark form-control" type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="col">
+                            <input  required class="border border-dark form-control" type="password" name="confirm_password" placeholder="Confirm password">
                         </div>
                     </div>
                     <div class="row mt-2">

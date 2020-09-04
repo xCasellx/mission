@@ -1,16 +1,17 @@
 $(document).ready(function () {
     $(document).on("click","#open-edit-data",function () {
-        $(".edit-data").css("display", "block");
-        $("#open-edit-data").css("display", "none");
-        $("#cancel-edit-data").css("display", "block");
+        $(".edit-data").toggleClass("show-edit-data");
+
+
+        if($("#open-edit-data").text()=="Edit") {
+            $("#open-edit-data").text("Cancel");
+        }
+        else {
+            $("#open-edit-data").text("Edit");
+        }
 
     });
-    $(document).on("click","#cancel-edit-data",function () {
-        $(".edit-data").css("display", "none");
-        $("#cancel-edit-data").css("display", "none");
-        $("#open-edit-data").css("display", "block");
 
-    });
     let edit_component;
     $(document).on("click",".edit-data",function () {
         edit_component = $(this).attr('id');
@@ -21,14 +22,17 @@ $(document).ready(function () {
                 break;
             case "number":
                 $("#input-number").css("display", "block");
+                $("#input-number").attr('placeholder',$("#user_number").text());
                 break;
             case "email":
                 $("#input-email").css("display", "block");
+                $("#input-email").attr('placeholder',$("#user_email").text());
                 break;
             case "password":
                 $("#div-password").css("display", "block");
                 break;
             default :
+                $("#input-modal").attr('placeholder',$("#user_"+edit_component).text());
                 $("#input-modal").css("display", "block");
 
         }
@@ -64,6 +68,7 @@ $(document).ready(function () {
             confirm_password: confirm_password
         },function (data) {
             if(data.indexOf("Error:")!=-1){
+                $("#error-msg").css("display", "block");
                 $("#error-msg").text(data);
                 switch (edit_component) {
                     case "date":
@@ -93,8 +98,10 @@ $(document).ready(function () {
     });
     $('#myModal').on('hide.bs.modal', function() {
         edit_component="";
+        $("#error-msg").css("display", "none");
         $("#error-msg").text("");
         $(".input-text").val("");
+        $(".input-text").removeClass( "alert-danger" );
         $(".input-edit").css("display", "none");
     });
     return false;

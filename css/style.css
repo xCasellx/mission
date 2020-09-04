@@ -1,8 +1,14 @@
 .edit-data{
     display: none;
-    text-decoration: none;
+    text-decoration: none!important;
+}
+.show-edit-data{
+    transition: all 2s linear;
+    display: block;
 }
 .input-edit{
     max-width:300px;
-    margin-left: 50px;
+}
+.visually-edit-data {
+    opacity: 0;
 }
