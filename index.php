@@ -27,7 +27,6 @@
         <meta charset="UTF-8">
         <title>Sign in</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-
     </head>
  <body class="bg-dark">
      <div  class="text-center container bg-light" style="width: 30%">

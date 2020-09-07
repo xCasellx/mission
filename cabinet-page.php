@@ -26,6 +26,7 @@
                 <strong>Email address: </strong><label id="user_email"><?php echo $user["email"];?> </label>
                 <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-email">edit</a><br>
                 <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-password">edit password</a><br class="edit-data">
+                <a href="#" data-toggle='modal' data-target='#myModal' class="edit-data float-right text-success" id="edit-image">edit image</a><br class="edit-data">
                 <div class="mt-3 bg-dark rounded p-1" ></div>
                     <a href="#" id="open-edit-data" class="float-right text-success mr-2 " style="text-decoration: none">Edit</a>
             </div>
@@ -36,22 +37,23 @@
             <div class="bg-dark modal-content p-0" >
                 <div class="text-center text-light modal-header">
                     <div class="container">
-                        <h4 class=" modal-title">Edit</h4>
+                        <h4 id="modal-title-h" class="modal-title">Edit</h4>
                     </div>
                 </div>
                 <div class="bg-light modal-body" >
-                    <div class="container" align="center">
-                        <label class="text-danger" id="error-msg" style="display: none"></label>
-                        <input type="date" class="form-control border-dark border input-text input-edit" id="input-date" style="display: none">
-                        <input type="email" class="form-control border-dark border input-text input-edit" id="input-email" style="display: none">
-                        <input type="number" class="form-control border-dark border input-text input-edit" placeholder="Number" id="input-number" style="display: none">
-                        <input type="text" class="form-control border-dark border input-text input-edit" id="input-modal" style="display: none" >
-                        <div class="input-edit " id="div-password" style="display: none;">
-                            <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Password"  id="input-password">
-                            <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="New password"  id="input-new-password">
-                            <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Confirm password" id="input-confirm-password">
+                        <div class="container" align="center">
+                                <label class="text-danger" id="error-msg" style="display: none"></label>
+                                <input type="date"  max="<?php echo (date('Y')-5).date('-m-d')?>" class="form-control border-dark border input-text input-edit" id="input-date" style="display: none">
+                                <input type="email" class="form-control border-dark border input-text input-edit" id="input-email" style="display: none">
+                                <input type="text" class="form-control border-dark border input-text input-edit" id="input-number" style="display: none" pattern="[0-9]{10,15}">
+                                <input type="text" class="form-control border-dark border input-text input-edit" id="input-modal" style="display: none" >
+                                <input type="file" class="input-edit input-text" style="display: none;" id="input-image" accept="image/jpeg,image/png,image/gif">
+                                <div class="input-edit " id="div-password" style="display: none;">
+                                    <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Password"  id="input-password">
+                                    <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="New password"  id="input-new-password">
+                                    <input type="password" class="mt-2 input-text border-dark border form-control" placeholder="Confirm password" id="input-confirm-password">
+                                </div>
                         </div>
-                    </div>
                 </div>
                 <div class="p-1 bg-dark modal-footer">
                         <button type="button"  id="save_button" class="btn btn-outline-success" ><strong>Save</strong></button>

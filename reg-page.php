@@ -77,7 +77,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input required class="border border-dark form-control" type="text" name="number" maxlength="15" placeholder="Phone">
+                            <input required class="border border-dark form-control" type="text" pattern="[0-9]{10,15}"  name="number"  placeholder="Phone">
                         </div>
                         <div class="col">
                             <input required  class="border border-dark form-control" type="text" name="residence" placeholder="Place of residence">
@@ -93,7 +93,7 @@
                             <label  class="form-control  border-0 pb-0">Date of Birth</label>
                         </div>
                         <div class="col">
-                            <input required class="border border-dark form-control " type="date" name="date" placeholder="Email address">
+                            <input required class="border border-dark form-control "max="<?php echo (date('Y')-5).date('-m-d')?> type="date" name="date" placeholder="Email address">
                         </div>
                     </div>
                     <div class="row mt-2">

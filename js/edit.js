@@ -17,21 +17,30 @@ $(document).ready(function () {
         edit_component = $(this).attr('id');
         edit_component = edit_component.replace("edit-","");
         switch (edit_component) {
+            case "image":
+                $("#modal-title-h").text("Edit image");
+                $("#input-image").css("display", "block");
+                break;
             case "date":
+                $("#modal-title-h").text("Edit date");
                 $("#input-date").css("display", "block");
                 break;
             case "number":
+                $("#modal-title-h").text("Edit number");
                 $("#input-number").css("display", "block");
                 $("#input-number").attr('placeholder',$("#user_number").text());
                 break;
             case "email":
+                $("#modal-title-h").text("Edit email");
                 $("#input-email").css("display", "block");
                 $("#input-email").attr('placeholder',$("#user_email").text());
                 break;
             case "password":
+                $("#modal-title-h").text("Edit password");
                 $("#div-password").css("display", "block");
                 break;
             default :
+                $("#modal-title-h").text("Edit "+edit_component.replace("_"," "));
                 $("#input-modal").attr('placeholder',$("#user_"+edit_component).text());
                 $("#input-modal").css("display", "block");
 
@@ -57,6 +66,9 @@ $(document).ready(function () {
             case "number":
                 edit_text= $("#input-number").val();
                 break;
+            case "image":
+                edit_text= $("#input-image").val();
+                break;
             default :
                 edit_text= $("#input-modal").val();
                 break;
@@ -71,6 +83,9 @@ $(document).ready(function () {
                 $("#error-msg").css("display", "block");
                 $("#error-msg").text(data);
                 switch (edit_component) {
+                    case "image":
+                        edit_text= $("#input-image").addClass("alert-danger");
+                        break;
                     case "date":
                         edit_text= $("#input-date").addClass("alert-danger");
                         break;
